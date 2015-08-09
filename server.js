@@ -13,13 +13,16 @@ app.get('/', function(req, res){
 
 app.use('/assets', express.static(__dirname + '/assets'));
 
-io.on('connection', function(socket){
+io.on('connection', function(socket) {
   socket.emit('initialize', "Welcome to Kokochat!");
 
-  socket.on('chat', function(msg, user){
-    socket.emit('message', user + " said " + '" ' + msg + ' "');
-    socket.broadcast.emit('message', user + " said " + '" ' + msg + ' "');
-    console.log('message: ' + msg)
+  socket.on('newUserJoins', function(username) {
+    socket.broadcast.emit('newUser', username)
+  });
+
+  socket.on('chat', function(data) {
+    socket.emit('message', data);
+    socket.broadcast.emit('message', data);
   });
 });
 

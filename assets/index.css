@@ -6,11 +6,18 @@
 
 body {
   font: 13px Helvetica, Arial;
+  /*background-image: url('clouds.jpg');
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-y: scroll;*/
 }
 
 form {
   background: #D2D2D2;
-  /*padding: 3px;*/
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -53,5 +60,29 @@ form button:hover {
 }
 
 #messages li:nth-child(odd) {
-  background: #F8F8F8;
+  background: #F2F2F2;
+}
+
+.username {
+  font-family: 'Arial';
+  font-size: 15px;
+  color: #296AD4;
+}
+
+.timestamp {
+  font-style: italic;
+  color: #D2D2D2;
+  font-family: 'Arial';
+  font-size: 10px;
+}
+
+.message {
+  font-family: 'Arial';
+  font-size: 15px;
+}
+
+.welcome-message {
+  font-family: 'Arial';
+  font-size: 15px;
+  color: #CC99CC;
 }
