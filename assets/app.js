@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var socket = io.connect('http://localhost:3000');
+  var socket = io();
 
   socket.on('initialize', function(message) {
     $('#messages').append('<li>' + message + '</li>')
