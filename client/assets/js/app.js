@@ -15,7 +15,7 @@ $(document).ready(function() {
   };
 
   var scrollToBottom = function() {
-    $('.container').scrollTop($('.container').height());
+    $('.container').scrollTop($('.container')[0].scrollHeight);
   }
 
   var socket = io();
