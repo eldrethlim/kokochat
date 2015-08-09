@@ -1,9 +1,23 @@
 {
   "name": "kokochat",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "ur": "git@github.com:eldrethlim/kokochat.git"
+  },
   "description": "Will crush Telegram by 2020",
+  "license": "ISC",
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
   "dependencies": {
     "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "mongoose": "^4.1.1",
+    "node-sass": "^3.2.0",
+    "passport": "^0.2.2",
     "socket.io": "^1.3.6"
   }
 }

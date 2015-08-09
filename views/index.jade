@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+  head
+    title="Kokochat"
+    link(rel="stylesheet" href="css/index.css")
+    script(type="text/javascript" src="/socket.io/socket.io.js")
+    script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+    script(type="text/javascript" src="js/app.js")
+
+  body
+    .container
+      ul#messages
+    form(action="")
+      input#m(autocomplete="off")
+      button SEND
