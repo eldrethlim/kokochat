@@ -1,6 +1,8 @@
 $(document).ready(function() {
   var socket = io();
 
+  var username = prompt("Hi, what's your name?")
+
   socket.on('initialize', function(message) {
     $('#messages').append('<li>' + message + '</li>')
   });
@@ -12,7 +14,7 @@ $(document).ready(function() {
   $('form').submit(function(){
     var message = $('#m').val();
     if (message != "") {
-      socket.emit('chat', message);
+      socket.emit('chat', message, username);
       $('#m').val('');
       return false;
     }

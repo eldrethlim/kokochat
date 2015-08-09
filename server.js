@@ -16,9 +16,9 @@ app.use('/assets', express.static(__dirname + '/assets'));
 io.on('connection', function(socket){
   socket.emit('initialize', "Welcome to Kokochat!");
 
-  socket.on('chat', function(msg){
-    socket.emit('message', msg);
-    socket.broadcast.emit('message', msg);
+  socket.on('chat', function(msg, user){
+    socket.emit('message', user + " said " + '" ' + msg + ' "');
+    socket.broadcast.emit('message', user + " said " + '" ' + msg + ' "');
     console.log('message: ' + msg)
   });
 });
