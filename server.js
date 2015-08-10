@@ -6,15 +6,40 @@ var path = require('path');
 var sassMiddleware = require('node-sass-middleware');
 var rootPath = __dirname;
 var mongoose = require('mongoose');
+var passport = require('passport');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var LocalStrategy = require('passport-local').Strategy;
 
-require('./server/db')(mongoose)
-require('./server/chat')(http, mongoose)
-
-// Server PORT
+// Server port
 process.env['PORT'] = process.env.PORT || 3000;
 var port = process.env.PORT || 3000;
 
-// Render SASS
+// Models
+require('./models/Message')(mongoose)
+require('./models/User')(mongoose)
+
+// Authentication
+var User = mongoose.model( 'User' );
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
+
+// Services
+require('./services/db')(mongoose)
+require('./services/chat')(http, mongoose)
+
+// SASS
 app.use(sassMiddleware({
   src: path.join(rootPath, '/precompiled_assets'),
   dest: path.join(rootPath, '/client/assets'),
@@ -23,18 +48,16 @@ app.use(sassMiddleware({
   })
 );
 
-// Fetch static assets
+// Assets and views
 app.use(express.static(path.join(rootPath, '/client/assets')));
-
-// Run jade template
 app.set('views', path.join(rootPath, '/client/views'));
 app.set('view engine', 'jade');
 
 // Routes
-var index = require('./routes/index.js')
-
-app.use('/', index);
+var routes = require('./routes.js')
+app.use('/', routes);
 
 // Server listener
 http.listen(port, function(){
+
 });
