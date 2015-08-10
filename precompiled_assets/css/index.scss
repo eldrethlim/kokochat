@@ -11,11 +11,15 @@
       text-decoration: none;
     }
 
-    .red {
+    #title {
       color: #B0344E;
     }
 
-    .btn-cta {
+    .hide {
+      display: none;
+    }
+
+    #chat-button {
       background-color: #296AD4;
       color: white;
       font-family: 'Arial';

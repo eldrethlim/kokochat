@@ -1,15 +1,16 @@
 extends layout
 
 block content
+  script(type="text/javascript" src="js/index.js")
+
   .index
     .content
       .container-fluid
         .row
           .col-md-4.col-md-offset-4.text-center
-            p.red This is Kokochat Landing Page
+            h1#title.hide Welcome to Kokochat
 
         .row
           .col-md-4.col-md-offset-4.col-xs-6.col-xs-offset-3
             a(href="/chat")
-              button.btn.btn-cta.btn-large.btn-block Start Chatting
-      
+              button#chat-button.btn.btn-large.btn-block Start Chatting
