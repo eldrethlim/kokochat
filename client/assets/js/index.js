@@ -12,4 +12,4 @@ $(document).ready(function() {
   setTimeout(function() {
     runAnimations($('#chat-button'), '', 'animated pulse')
   }, 1000);
-
+});
