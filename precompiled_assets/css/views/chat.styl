@@ -1,0 +1,65 @@
+.chat
+  font 13px Helvetica Arial
+
+  .chat-container
+    border 2px solid #4099FF
+    overflow-y scroll
+    height 90vh
+
+  form
+    background-color #D2D2D2
+    position fixed
+    bottom 0
+    width 100%
+
+    input
+      border 0
+      padding 10px
+      width 90%
+      margin-right 0
+
+    button
+      width: 9.7%
+      background-color #296AD4
+      border none
+      padding 10px
+      font-family Arial
+      color #FFFFFF
+      font-size 15px
+
+      &:focus
+        outline none
+
+      &:hover
+        background-color: #4099FF
+        transition 0.2s
+
+  #messages
+    list-style-type none
+    margin 0
+    padding 0
+
+    li
+      padding 5px 10px
+
+      :nth-child odd
+        background #F2F2F2
+  .username
+    font-family Arial
+    font-size 15px
+    color #296AD4
+
+  .timestamp
+    font-style italic
+    color #D2D2D2
+    font-family Arial
+    font-size 10px
+
+  .message
+    font-family: Arial
+    font-size 15px
+
+  .welcome-message
+    font-family Arial
+    font-size 15px
+    color: #CC99CC
