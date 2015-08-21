@@ -49,7 +49,6 @@ app.use(stylus.middleware({
   compile: compile
 }))
 
-
 // Assets and views
 app.use(express.static(path.join(rootPath, '/client/assets')));
 app.set('views', path.join(rootPath, '/client/views'));
