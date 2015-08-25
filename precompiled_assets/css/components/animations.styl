@@ -1,0 +1,41 @@
+// Pulse
+@keyframes pulse
+  0%
+    transform scale3d(1, 1, 1)
+
+  50%
+    transform scale3d(1.05, 1.05, 1.05)
+
+  100%
+    transform scale3d(1, 1, 1)
+
+.pulse
+  animation-name pulse
+
+// End
+
+// Fade In Down
+@keyframes fadeInDown
+  0%
+    opacity 0
+    transform translate3d(0, -100%, 0)
+
+  100%
+    opacity 1
+    transform none
+    
+.fadeInDown
+  animation-name fadeInDown
+
+// End
+
+.animated
+  -webkit-animation-duration 1s
+  -moz-animation-duration 1s
+  -o-animation-duration 1s
+  animation-duration 1s
+
+  -webkit-animation-fill-mode both
+  -moz-animation-fill-mode both
+  -o-animation-fill-mode both
+  animation-fill-mode both
